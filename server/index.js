@@ -10,7 +10,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://blog-app-tau-seven-69.vercel.app', 
+  credentials: true
+}));
 
 //MongoDB database
 mongoose.connect("mongodb+srv://admin123:admin123@b546.i6mpko0.mongodb.net/blogApp?retryWrites=true&w=majority&appName=b546");
