@@ -1,0 +1,70 @@
+Objective: ExpressJS API - Inventory Management
+
+1. What is the main objective of the project?
+	- ExpressJS API - Inventory Management with Simple CRUD functionalities
+
+2. Who are the target users of the application?
+	- Company Employees
+
+3. What are the core features or functionalities required?
+
+	- Basic CRUD operations for managing inventory items (Create, Read, Update, Delete).
+		- Authenticated user ability to retrieve a list of all inventory items.
+		- Authenticated user ability to add a new inventory item.
+		- Authenticated user to update an existing inventory item.
+		- Authenticated user to delete an inventory item.
+
+4. What data will the application need to store and manage?
+
+	- Item
+		- name
+		- quantity
+		- description
+
+	- User information 
+		- email
+		- password
+		- isAdmin
+
+5. Are there any specific technical requirements or constraints?
+
+	- Express.js API.
+	- MongoDB with Mongoose for data storage and management.
+	- RESTful Architecture.
+
+6. What are the security and authentication requirements?
+
+	- Token-based Authentication (JWT).
+	- Brcypt hash
+
+7. What are your routes and controllers?
+
+	Routes:
+
+	User
+
+	POST /users/login - User login route.
+	POST /users/register - User registration route.
+
+	Inventory Routes:
+
+	GET /items/ - Retrieve a list of all inventory items.
+	POST /items/ - Add a new inventory item.
+	GET /items/:id - Retrieve a specific inventory item by its ID.
+	PUT /items/:id - Update an existing inventory item.
+	DELETE /items/:id - Delete an inventory item by its ID.
+
+	Controllers:
+
+	User Controller:
+
+	loginUser
+	registerUser
+
+	Inventory Controller:
+
+	getAllInventoryItems
+	createInventoryItem
+	getInventoryItemById
+	updateInventoryItem
+	deleteInventoryItem
