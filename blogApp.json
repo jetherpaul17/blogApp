@@ -1,5 +1,5 @@
 {
-    "url": "",
+    "url": "https://blog-app-tau-seven-69.vercel.app/",
     "endpoints": {
         "register": "/register",
         "login": "/login",

@@ -101,7 +101,7 @@ const AuthState = ({ children }) => {
       
       console.log('Attempting login with:', formData);
       
-      const res = await fetch('http://localhost:4000/users/login', {
+      const res = await fetch('https://blogapp-fkb5.onrender.com/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ const AuthState = ({ children }) => {
       
       console.log('Attempting registration with:', formData);
       
-      const res = await fetch('http://localhost:4000/users/register', {
+      const res = await fetch('https://blogapp-fkb5.onrender.com/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

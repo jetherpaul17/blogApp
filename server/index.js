@@ -10,10 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use(cors({
-  origin: 'https://blog-app-tau-seven-69.vercel.app', 
-  credentials: true
-}));
+app.use(cors());
 
 //MongoDB database
 mongoose.connect("mongodb+srv://admin123:admin123@b546.i6mpko0.mongodb.net/blogApp?retryWrites=true&w=majority&appName=b546");
@@ -29,10 +26,14 @@ const postRoutes = require("./routes/posts");
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
-if(require.main === module){
-	app.listen(process.env.PORT || port, () => {
-	    console.log(`API is now online on port ${ process.env.PORT || port }`)
-	});
-}
+// if(require.main === module){
+// 	app.listen(process.env.PORT || port, () => {
+// 	    console.log(`API is now online on port ${ process.env.PORT || port }`)
+// 	});
+// }
+
+app.listen(process.env.PORT || port, () => {
+	console.log(`API is now online on port ${ process.env.PORT || port }`)
+});
 
 module.exports = {app,mongoose};

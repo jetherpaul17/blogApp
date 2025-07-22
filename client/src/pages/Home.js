@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:4000/posts/getPosts');
+        const response = await fetch('https://blogapp-fkb5.onrender.com/posts/getPosts');
         const data = await response.json();
         
         if (response.ok) {

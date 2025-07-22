@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   // Fetch posts and comment counts
   const fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:4000/posts/getPosts');
+      const response = await fetch('https://blogapp-fkb5.onrender.com/posts/getPosts');
       const data = await response.json();
 
       if (response.ok) {
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
     const commentCounts = {};
     for (const post of postsArray) {
       try {
-        const commentsResponse = await fetch(`http://localhost:4000/posts/getComments/${post._id}`);
+        const commentsResponse = await fetch(`https://blogapp-fkb5.onrender.com/posts/getComments/${post._id}`);
         const commentsData = await commentsResponse.json();
         // Extract comments from the response object, same fix as loadComments
         const commentsArray = Array.isArray(commentsData.comments) ? commentsData.comments : (Array.isArray(commentsData) ? commentsData : []);
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:4000/posts/deletePost/${id}`, {
+      const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/deletePost/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:4000/posts/addPost', {
+      const response = await fetch('https://blogapp-fkb5.onrender.com/posts/addPost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -164,7 +164,7 @@ const AdminDashboard = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:4000/posts/updatePost/${selectedPost._id}`, {
+      const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/updatePost/${selectedPost._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -205,7 +205,7 @@ const AdminDashboard = () => {
   // Simplified comment loading like Post.js
   const loadComments = async (postId) => {
     try {
-      const response = await fetch(`http://localhost:4000/posts/getComments/${postId}`);
+      const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/getComments/${postId}`);
       const data = await response.json();
       
       if (response.ok) {
@@ -252,7 +252,7 @@ const AdminDashboard = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:4000/posts/deleteComment/${postId}/${commentId}`, {
+        const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/deleteComment/${postId}/${commentId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

@@ -18,7 +18,7 @@ const Post = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/posts/getPost/${id}`);
+        const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/getPost/${id}`);
         const data = await response.json();
         
         if (response.ok) {
@@ -35,7 +35,7 @@ const Post = () => {
 
     const fetchComments = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/posts/getComments/${id}`);
+        const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/getComments/${id}`);
         const data = await response.json();
         
         if (response.ok) {
@@ -67,7 +67,7 @@ const Post = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:4000/posts/deletePost/${id}`, {
+        const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/deletePost/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -98,7 +98,7 @@ const Post = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:4000/posts/updatePost/${id}`, {
+      const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/updatePost/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ const Post = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:4000/posts/addComment/${id}`, {
+      const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/addComment/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ const Post = () => {
           return;
         }
 
-        const response = await fetch(`http://localhost:4000/posts/deleteComment/${id}/${commentId}`, {
+        const response = await fetch(`https://blogapp-fkb5.onrender.com/posts/deleteComment/${id}/${commentId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

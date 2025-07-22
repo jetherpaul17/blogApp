@@ -42,7 +42,7 @@ const CreatePost = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:4000/posts/addPost', {
+      const response = await fetch('https://blogapp-fkb5.onrender.com/posts/addPost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
